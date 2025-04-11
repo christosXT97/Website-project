@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Games Hub - Fun HTML, CSS & JavaScript Games</title>
+    <meta name="description" content="Enjoy a collection of fun mini-games built with HTML, CSS, and JavaScript">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    
+    <header>
+        <h1><i class="fas fa-gamepad"></i> Mini Games Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="games/connect4.html"><i class="fas fa-circle"></i> Connect 4</a></li>
+                <li><a href="#" class="disabled"><i class="fas fa-chess"></i> Coming Soon</a></li>
+                <li><a href="#" class="disabled"><i class="fas fa-puzzle-piece"></i> Coming Soon</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Welcome to Mini Games Hub</h2>
+                <p>Enjoy a collection of fun mini-games built with HTML, CSS, and JavaScript. Perfect for quick entertainment or learning web development techniques!</p>
+                <a href="#games" class="cta-button">Explore Games <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/500x300/2196F3/FFFFFF?text=Mini+Games" alt="Mini Games Illustration">
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-code"></i></div>
+                <h3>HTML, CSS & JS</h3>
+                <p>All games are built using pure web technologies that run directly in your browser.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Responsive Design</h3>
+                <p>Play on any device - our games adapt to your screen size automatically.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
+                <h3>Fun & Educational</h3>
+                <p>Enjoy classic games while learning about interactive web development.</p>
+            </div>
+        </section>
+
+        <section id="games" class="games-section">
+            <h2 class="section-title">Our Games Collection</h2>
+            <p class="section-description">Select a game from the grid below to start playing!</p>
+            
+            <div class="games-grid">
+                <!-- Connect 4 Card -->
+                <div class="game-card">
+                    <div class="game-card-badge">Popular</div>
+                    <div class="game-card-image">
+                        <img src="https://via.placeholder.com/400x250/2196F3/FFFFFF?text=Connect+4" alt="Connect 4">
+                    </div>
+                    <div class="game-card-content">
+                        <h3>Connect 4</h3>
+                        <div class="game-card-meta">
+                            <span><i class="fas fa-user"></i> 2 Players</span>
+                            <span><i class="fas fa-star"></i> Classic</span>
+                        </div>
+                        <p>Drop pieces to connect four in a row, column, or diagonal before your opponent!</p>
+                        <a href="games/connect4.html" class="game-card-button">Play Now <i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tic Tac Toe Card (Coming Soon) -->
+                <div class="game-card coming-soon">
+                    <div class="game-card-image">
+                        <img src="https://via.placeholder.com/400x250/4CAF50/FFFFFF?text=Tic+Tac+Toe" alt="Tic Tac Toe">
+                    </div>
+                    <div class="game-card-content">
+                        <h3>Tic Tac Toe</h3>
+                        <div class="game-card-meta">
+                            <span><i class="fas fa-user"></i> 2 Players</span>
+                            <span><i class="fas fa-star"></i> Classic</span>
+                        </div>
+                        <p>The classic game of X's and O's. Get three in a row to win!</p>
+                        <a href="#" class="game-card-button disabled">Coming Soon <i class="fas fa-clock"></i></a>
+                    </div>
+                </div>
+
+                <!-- Memory Game Card (Coming Soon) -->
+                <div class="game-card coming-soon">
+                    <div class="game-card-image">
+                        <img src="https://via.placeholder.com/400x250/9C27B0/FFFFFF?text=Memory+Game" alt="Memory Game">
+                    </div>
+                    <div class="game-card-content">
+                        <h3>Memory Game</h3>
+                        <div class="game-card-meta">
+                            <span><i class="fas fa-user"></i> 1 Player</span>
+                            <span><i class="fas fa-brain"></i> Puzzle</span>
+                        </div>
+                        <p>Test your memory by finding matching pairs of cards. How fast can you clear the board?</p>
+                        <a href="#" class="game-card-button disabled">Coming Soon <i class="fas fa-clock"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter to be notified when we add new games!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3><i class="fas fa-gamepad"></i> Mini Games Hub</h3>
+                <p>A collection of fun mini-games built with HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games/connect4.html">Connect 4</a></li>
+                    <li><a href="#">Coming Soon</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mini Games Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
