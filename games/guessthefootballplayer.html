@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Football Player | Mini Games Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/guessfootball.css">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <meta name="description" content="Guess the football player based on clues and hints provided.">
+</head>
+<body>
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <div class="game-nav">
+        <div class="game-title">
+            <i class="fas fa-futbol"></i> Mini Games Hub
+        </div>
+        <div class="nav-buttons">
+            <a href="../index.html" class="nav-btn">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="connect4.html" class="nav-btn">
+                <i class="fas fa-circle"></i> Connect 4
+            </a>
+            <a href="guessfootball.html" class="nav-btn active">
+                <i class="fas fa-futbol"></i> Guess the Football Player
+            </a>
+            <a href="#" class="nav-btn disabled">
+                <i class="fas fa-puzzle-piece"></i> Coming Soon
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <div class="game-container">
+            <h2>Guess the Football Player</h2>
+            <p class="game-description">Can you guess the football player based on the clues and image provided?</p>
+            
+            <div class="scoreboard">
+                <div class="player player-guess">
+                    <div class="player-icon">?</div>
+                    <span>Guess the Player</span>
+                </div>
+                <div id="game-status">Start the game to guess!</div>
+            </div>
+
+            <div class="game-clues">
+                <p>Clue: <span id="clue">Clue will appear here</span></p>
+                <input type="text" id="guess-input" placeholder="Enter your guess..." />
+                <button id="submit-guess">Submit Guess</button>
+            </div>
+            
+            <div class="game-controls">
+                <button id="next-player"><i class="fas fa-arrow-right"></i> Next Player</button>
+                <button id="reset-game"><i class="fas fa-sync-alt"></i> Reset Game</button>
+            </div>
+            
+            <div class="game-instructions">
+                <h3><i class="fas fa-info-circle"></i> How to Play</h3>
+                <ul>
+                    <li>Guess the football player based on the clues provided.</li>
+                    <li>After each guess, you will be given feedback whether your guess was correct or not.</li>
+                    <li>If you guess correctly, you'll move to the next player.</li>
+                    <li>Use the clues to help you make your guess more accurate!</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3><i class="fas fa-futbol"></i> Mini Games Hub</h3>
+                <p>A collection of fun mini-games built with HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="connect4.html">Connect 4</a></li>
+                    <li><a href="guessfootball.html">Guess the Football Player</a></li>
+                    <li><a href="#">Coming Soon</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mini Games Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/guessfootball.js"></script>
+</body>
+</html>
