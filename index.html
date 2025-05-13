@@ -1,3 +1,4 @@
+<!-- styles/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +8,6 @@
     <meta name="description" content="Enjoy a collection of fun mini-games built with HTML, CSS, and JavaScript">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
-
-    <link rel="stylesheet" href="styles/nav.css">
-
-
     <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
@@ -18,24 +15,30 @@
         <div class="preloader-spinner"></div>
     </div>
     
-
+    <!-- Blue Navigation Bar -->
     <div class="game-nav">
         <div class="game-title">
             <i class="fas fa-gamepad"></i> Mini Games Hub
         </div>
         <div class="nav-buttons">
-            <a href="index.html" class="nav-btn active">
+            <a href="index.html" id="home-btn" class="nav-btn active">
                 <i class="fas fa-home"></i> Home
             </a>
-            <a href="games/connect4.html" class="nav-btn">
+            <a href="games/connect4.html" id="connect4-btn" class="nav-btn">
                 <i class="fas fa-circle"></i> Connect 4
             </a>
-            <a href="games/tictactoe.html" class="nav-btn">
+            <a href="games/tictactoe.html" id="tictactoe-btn" class="nav-btn">
                 <i class="fas fa-times"></i> Tic Tac Toe
+            </a>
+            <a href="games/memorysequence.html" id="memory-btn" class="nav-btn">
+                <i class="fas fa-brain"></i> Memory sequence
+            </a>
+            <a href="#" id="coming-soon-btn" class="nav-btn disabled">
+                <i class="fas fa-puzzle-piece"></i> Coming Soon
             </a>
         </div>
     </div>
-
+    
     <main>
         <section class="hero">
             <div class="hero-content">
@@ -88,43 +91,52 @@
                     </div>
                 </div>
 
-
                 <!-- Tic Tac Toe Card -->
                 <div class="game-card">
-                    <div class="game-card-badge">New!</div>
-
-                <!-- Tic Tac Toe Card (Coming Soon) -->
-                <div class="game-card coming-soon">
-
+                    <div class="game-card-badge">Classic</div>
                     <div class="game-card-image">
-                        <img src="https://via.placeholder.com/400x250/4CAF50/FFFFFF?text=Tic+Tac+Toe" alt="Tic Tac Toe">
+                        <img src="https://via.placeholder.com/400x250/F44336/FFFFFF?text=Tic+Tac+Toe" alt="Tic Tac Toe">
                     </div>
                     <div class="game-card-content">
                         <h3>Tic Tac Toe</h3>
                         <div class="game-card-meta">
                             <span><i class="fas fa-user"></i> 2 Players</span>
-                            <span><i class="fas fa-star"></i> Classic</span>
+                            <span><i class="fas fa-times"></i> Strategy</span>
                         </div>
-                        <p>The classic game of X's and O's. Get three in a row to win!</p>
-
+                        <p>The classic game of X's and O's. Get three in a row, column, or diagonal to win!</p>
                         <a href="games/tictactoe.html" class="game-card-button">Play Now <i class="fas fa-play-circle"></i></a>
-
-
                     </div>
                 </div>
 
-                <!-- Memory Game Card (Coming Soon) -->
-                <div class="game-card coming-soon">
+                <!-- Memory Sequence Card -->
+                <div class="game-card">
+                    <div class="game-card-badge">New</div>
                     <div class="game-card-image">
-                        <img src="https://via.placeholder.com/400x250/9C27B0/FFFFFF?text=Memory+Game" alt="Memory Game">
+                        <img src="https://via.placeholder.com/400x250/03A9F4/FFFFFF?text=Memory+Sequence" alt="Memory Sequence">
                     </div>
                     <div class="game-card-content">
-                        <h3>Memory Game</h3>
+                        <h3>Memory Sequence</h3>
                         <div class="game-card-meta">
                             <span><i class="fas fa-user"></i> 1 Player</span>
                             <span><i class="fas fa-brain"></i> Puzzle</span>
                         </div>
-                        <p>Test your memory by finding matching pairs of cards. How fast can you clear the board?</p>
+                        <p>Test your memory! Watch the sequence of highlighted cells and repeat it in the right order.</p>
+                        <a href="games/memorysequence.html" class="game-card-button">Play Now <i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+
+                <!-- Placeholder for future games -->
+                <div class="game-card coming-soon">
+                    <div class="game-card-image">
+                        <img src="https://via.placeholder.com/400x250/9C27B0/FFFFFF?text=More+Games" alt="Coming Soon">
+                    </div>
+                    <div class="game-card-content">
+                        <h3>More Games Coming Soon</h3>
+                        <div class="game-card-meta">
+                            <span><i class="fas fa-puzzle-piece"></i> Various Types</span>
+                            <span><i class="fas fa-clock"></i> In Development</span>
+                        </div>
+                        <p>Stay tuned for additional mini-games that will be added to the collection soon!</p>
                         <a href="#" class="game-card-button disabled">Coming Soon <i class="fas fa-clock"></i></a>
                     </div>
                 </div>
@@ -154,10 +166,8 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="games/connect4.html">Connect 4</a></li>
-
                     <li><a href="games/tictactoe.html">Tic Tac Toe</a></li>
-
-                    <li><a href="#">Coming Soon</a></li>
+                    <li><a href="games/memorysequence.html">Memory Sequence</a></li>
                 </ul>
             </div>
             <div class="footer-social">
@@ -179,5 +189,6 @@
     </button>
 
     <script src="scripts/main.js"></script>
+    <script src="scripts/nav.js"></script>
 </body>
 </html>

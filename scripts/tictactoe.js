@@ -1,3 +1,4 @@
+//scripts/tictactoe.js
 // Tic Tac Toe Game Logic
 document.addEventListener('DOMContentLoaded', () => {
     // Game configuration

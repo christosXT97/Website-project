@@ -1,3 +1,4 @@
+//scripts/main.js
 // Main Website JavaScript
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Mini Games Hub is loaded and ready!');
