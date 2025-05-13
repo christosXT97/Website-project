@@ -1,3 +1,4 @@
+//scripts/main.js
 // Main Website JavaScript
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Mini Games Hub is loaded and ready!');
@@ -277,3 +278,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Function to use components, so theres no need to write navbar or footer more than once
+function includeHTML(selector, file) {
+  fetch(file)
+    .then(response => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.text();
+    })
+    .then(data => {
+      document.querySelector(selector).innerHTML = data;
+    })
+    .catch(err => console.error('Error loading component:', err));
+}

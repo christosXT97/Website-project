@@ -1,3 +1,4 @@
+  <!-- games/connect4.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +7,6 @@
     <title>Connect 4 | Mini Games Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/main.css">
-
-    <link rel="stylesheet" href="../styles/nav.css">
-
-
     <link rel="stylesheet" href="../styles/connect4.css">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
     <meta name="description" content="Play the classic Connect 4 game built with pure HTML, CSS and JavaScript">
@@ -19,38 +16,32 @@
         <div class="preloader-spinner"></div>
     </div>
 
-
+    <!-- Blue Navigation Bar -->
     <div class="game-nav">
         <div class="game-title">
             <i class="fas fa-gamepad"></i> Mini Games Hub
         </div>
         <div class="nav-buttons">
-            <a href="../index.html" class="nav-btn">
+            <a href="../index.html" id="home-btn" class="nav-btn">
                 <i class="fas fa-home"></i> Home
             </a>
-            <a href="connect4.html" class="nav-btn active">
+            <a href="../games/connect4.html" id="connect4-btn" class="nav-btn active">
                 <i class="fas fa-circle"></i> Connect 4
             </a>
-            <a href="tictactoe.html" class="nav-btn">
+            <a href="../games/tictactoe.html" id="tictactoe-btn" class="nav-btn">
                 <i class="fas fa-times"></i> Tic Tac Toe
             </a>
-            <a href="#" class="nav-btn disabled">
+            <a href="../games/minesweeper.html" class="nav-btn">
+                <i class=""></i> Minesweeper
+            </a>
+            <a href="../games/memorysequence.html" id="memory-btn" class="nav-btn">
+                <i class="fas fa-brain"></i> Memory sequence
+            </a>
+            <a href="#" id="coming-soon-btn" class="nav-btn disabled">
                 <i class="fas fa-puzzle-piece"></i> Coming Soon
             </a>
         </div>
-    <header>
-        <h1><i class="fas fa-gamepad"></i> Mini Games Hub</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="connect4.html" class="active"><i class="fas fa-circle"></i> Connect 4</a></li>
-                <!-- Add more game links as you create them -->
-                <li><a href="#" class="disabled"><i class="fas fa-chess"></i> Coming Soon</a></li>
-                <li><a href="#" class="disabled"><i class="fas fa-puzzle-piece"></i> Coming Soon</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    </div>
 
     <main>
         <div class="game-container">
@@ -105,10 +96,8 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="connect4.html">Connect 4</a></li>
-
                     <li><a href="tictactoe.html">Tic Tac Toe</a></li>
-
-                    <li><a href="#">Coming Soon</a></li>
+                    <li><a href="memorysequence.html">Memory Sequence</a></li>
                 </ul>
             </div>
             <div class="footer-social">
@@ -130,6 +119,7 @@
     </button>
 
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/nav.js"></script>
     <script src="../scripts/connect4.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+//scripts/connect4.js
 // Connect 4 Game Logic - Fixed Column Mapping
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Connect 4 game initialized");
