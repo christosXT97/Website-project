@@ -1,4 +1,4 @@
-//scripts/nav.js
+// scripts/nav.js
 // Navigation Bar Script
 document.addEventListener('DOMContentLoaded', function() {
     // Get current page path
@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('tictactoe-btn').classList.add('active');
     } else if (currentPath.includes('memorysequence.html')) {
         document.getElementById('memory-btn').classList.add('active');
+    } else if (currentPath.includes('guessplayer.html')) {
+        document.getElementById('guessplayer-btn').classList.add('active');
     }
-    
+
     // Fix relative paths for home page vs game pages
     const isHomePage = currentPath.includes('index.html') || currentPath === '/' || currentPath.endsWith('/');
     
@@ -29,5 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('connect4-btn').href = 'games/connect4.html';
         document.getElementById('tictactoe-btn').href = 'games/tictactoe.html';
         document.getElementById('memory-btn').href = 'games/memorysequence.html';
+        document.getElementById('guessplayer-btn').href = 'games/guessplayer.html';
     }
 });
