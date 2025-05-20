@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const minesCountDisplay = document.getElementById('mines-count');
   const difficultySelect = document.getElementById('difficulty');
 
-  // Difficulty settings object
   const difficulties = {
     easy:  { size: 8,  mines: 10 },
     normal:{ size: 10, mines: 20 },
@@ -16,22 +15,40 @@ document.addEventListener('DOMContentLoaded', () => {
   let cells = [];
   let gridSize = 10; // Default
   let mineCount = 20; // Default
+  let firstClick = true;
 
-  // Generate mine positions based on current difficulty
-  function generateMines() {
+  function generateMines(excludeIndex) {
     const positions = new Set();
+    const excludeSet = new Set([excludeIndex]);
+
+    // Exclude neighboring cells for safer starting area
+    const directions = [-1, 1, -gridSize, gridSize, -gridSize - 1, -gridSize + 1, gridSize - 1, gridSize + 1];
+    directions.forEach(dir => {
+      const neighbor = excludeIndex + dir;
+      if (
+        neighbor >= 0 &&
+        neighbor < gridSize * gridSize &&
+        !(excludeIndex % gridSize === 0 && dir === -1) &&
+        !((excludeIndex + 1) % gridSize === 0 && dir === 1)
+      ) {
+        excludeSet.add(neighbor);
+      }
+    });
+
     while (positions.size < mineCount) {
-      positions.add(Math.floor(Math.random() * gridSize * gridSize));
+      const rand = Math.floor(Math.random() * gridSize * gridSize);
+      if (!excludeSet.has(rand)) {
+        positions.add(rand);
+      }
     }
+
     return [...positions];
   }
 
-  // Count mines surrounding a given cell
   function countMinesAround(index) {
     const directions = [-1, 1, -gridSize, gridSize, -gridSize - 1, -gridSize + 1, gridSize - 1, gridSize + 1];
     return directions.reduce((count, dir) => {
       const neighbor = index + dir;
-      // Check boundaries: Avoid wrapping on left/right
       if (
         neighbor >= 0 &&
         neighbor < gridSize * gridSize &&
@@ -44,10 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 0);
   }
 
-  // Reveal cell content
   function reveal(index) {
     const cell = cells[index];
     if (cell.classList.contains('revealed') || cell.classList.contains('flag')) return;
+
+    if (firstClick) {
+      minePositions = generateMines(index);
+      firstClick = false;
+    }
 
     cell.classList.add('revealed');
 
@@ -59,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const minesAround = countMinesAround(index);
       if (minesAround > 0) {
         cell.textContent = minesAround;
+        cell.setAttribute('data-value', minesAround);
       } else {
-        // If no nearby mines, reveal neighbors recursively
         const directions = [-1, 1, -gridSize, gridSize, -gridSize - 1, -gridSize + 1, gridSize - 1, gridSize + 1];
         directions.forEach(dir => {
           const neighbor = index + dir;
@@ -78,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Toggle flag on right-click or long press
   function toggleFlag(index, e) {
     e.preventDefault();
     const cell = cells[index];
@@ -88,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Check if all non-mine cells have been revealed
   function checkWin() {
     const revealed = cells.filter(c => c.classList.contains('revealed')).length;
     if (revealed === gridSize * gridSize - mineCount) {
@@ -96,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // End the game: win or lose
   function gameOver(win) {
     status.textContent = win ? '🎉 You Win!' : '💥 Game Over!';
     cells.forEach((cell, i) => {
@@ -110,9 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Create and render the game board based on selected difficulty
   function createBoard() {
-    // Read selected difficulty
     const difficulty = difficultySelect.value;
     gridSize = difficulties[difficulty].size;
     mineCount = difficulties[difficulty].mines;
@@ -120,13 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
     board.innerHTML = '';
     status.textContent = '';
     cells = [];
-    minePositions = generateMines();
+    minePositions = [];
+    firstClick = true;
     minesCountDisplay.textContent = `💣 Mines: ${mineCount}`;
-
-    // Adjust grid columns based on gridSize
     board.style.gridTemplateColumns = `repeat(${gridSize}, 35px)`;
 
-    // Create cells
     for (let i = 0; i < gridSize * gridSize; i++) {
       const cell = document.createElement('div');
       cell.classList.add('cell');
@@ -137,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Listen for reset button and difficulty change to (re)create the board
   resetBtn.addEventListener('click', createBoard);
   difficultySelect.addEventListener('change', createBoard);
 
