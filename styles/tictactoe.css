@@ -31,6 +31,10 @@
     line-height: 1.6;
 }
 
+.game-instructions ul {
+    color: black;
+}
+
 /* Scoreboard styles */
 .scoreboard {
     display: flex;
@@ -45,6 +49,7 @@
 
 .player {
     display: flex;
+    color:black;
     align-items: center;
     padding: 10px 15px;
     border-radius: 50px;
