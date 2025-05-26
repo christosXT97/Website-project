@@ -31,6 +31,10 @@
     line-height: 1.6;
 }
 
+.game-instructions ul {
+    color: black;
+}
+
 /* Scoreboard styles */
 .scoreboard {
     display: flex;
